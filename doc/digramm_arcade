@@ -1,0 +1,105 @@
+<mxfile host="app.diagrams.net" modified="2022-04-10T14:19:16.244Z" agent="5.0 (X11)" etag="-YNqoyipbUh1wVtDdxUW" version="17.3.0" type="github">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="1422" dy="788" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="zkfFHV4jXpPFQw0GAbJ--0" value="IGames" style="swimlane;fontStyle=2;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="60" y="30" width="360" height="250" as="geometry">
+            <mxRectangle x="230" y="140" width="160" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b_x4JcduV1fH7PbY0Jc2-1" value="virtual ~IGame() = default;&#xa;        virtual int gameLoop() = 0;&#xa;        virtual void gameKeys(int) = 0;&#xa;        virtual void gameRestart() = 0;&#xa;        virtual size_t getScore() = 0;&#xa;        virtual void saveScore() = 0;&#xa;        virtual bool isAlive() = 0;&#xa;        virtual void loadMap() = 0;&#xa;        virtual void parseMap() = 0;&#xa;        virtual std::vector&lt;std::string&gt; getMap() = 0;&#xa;        virtual std::vector&lt;std::tuple&lt;char, char, std::string&gt;&gt; getAssets() = 0;&#xa;        virtual std::vector&lt;std::pair&lt;char, pos_t&gt;&gt; getElements() = 0;&#xa;        virtual void checkCollision() = 0;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="zkfFHV4jXpPFQw0GAbJ--0">
+          <mxGeometry y="26" width="360" height="224" as="geometry" />
+        </mxCell>
+        <mxCell id="zkfFHV4jXpPFQw0GAbJ--6" value="Ghost" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="570" y="420" width="150" height="120" as="geometry">
+            <mxRectangle x="130" y="380" width="160" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zkfFHV4jXpPFQw0GAbJ--9" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="zkfFHV4jXpPFQw0GAbJ--6" vertex="1">
+          <mxGeometry y="26" width="150" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="zkfFHV4jXpPFQw0GAbJ--10" value="pos_t _pos;&#xa;        bool _alive;&#xa;        type_t _type;&#xa;        direction_t _dir;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=4" parent="zkfFHV4jXpPFQw0GAbJ--6" vertex="1">
+          <mxGeometry y="34" width="150" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="zkfFHV4jXpPFQw0GAbJ--17" value="Player&#xa;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="508" y="120" width="312" height="250" as="geometry">
+            <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zkfFHV4jXpPFQw0GAbJ--18" value="bool isAlive();&#xa;        void setAlive(bool);&#xa;        bool isPower();&#xa;        void setPower(bool);&#xa;        pos_t getPos();&#xa;        void movePlayer(std::vector&lt;std::string&gt;);&#xa;        void updatePos();&#xa;        void setPos(pos_t);&#xa;        pos_t getLastPos();&#xa;        void setDirection(direction_t);&#xa;        direction_t getDirection();&#xa;        size_t getPowerDuration();&#xa;        void setPowerDuration(size_t);" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="zkfFHV4jXpPFQw0GAbJ--17" vertex="1">
+          <mxGeometry y="26" width="312" height="224" as="geometry" />
+        </mxCell>
+        <mxCell id="b_x4JcduV1fH7PbY0Jc2-2" value="Pacman" style="swimlane;fontStyle=2;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="240" y="330" width="180" height="100" as="geometry">
+            <mxRectangle x="230" y="140" width="160" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b_x4JcduV1fH7PbY0Jc2-3" value="size_t _score;&#xa;        Player *_player;&#xa;        std::vector&lt;Ghost *&gt; _ghost;&#xa;        std::vector&lt;std::string&gt; _map" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="b_x4JcduV1fH7PbY0Jc2-2">
+          <mxGeometry y="26" width="180" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="b_x4JcduV1fH7PbY0Jc2-4" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.311;entryY=-0.01;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="b_x4JcduV1fH7PbY0Jc2-1" target="b_x4JcduV1fH7PbY0Jc2-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="400" as="sourcePoint" />
+            <mxPoint x="440" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b_x4JcduV1fH7PbY0Jc2-5" value="" style="endArrow=classic;html=1;rounded=0;exitX=1.006;exitY=0.297;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="b_x4JcduV1fH7PbY0Jc2-3" target="zkfFHV4jXpPFQw0GAbJ--18">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="400" as="sourcePoint" />
+            <mxPoint x="440" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b_x4JcduV1fH7PbY0Jc2-6" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.027;entryY=0.163;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="b_x4JcduV1fH7PbY0Jc2-3" target="zkfFHV4jXpPFQw0GAbJ--10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="431.0799999999999" y="387.97800000000007" as="sourcePoint" />
+            <mxPoint x="518" y="345.04827926889516" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b_x4JcduV1fH7PbY0Jc2-7" value="IGraphics" style="swimlane;fontStyle=2;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="200" y="940" width="470" height="210" as="geometry">
+            <mxRectangle x="230" y="140" width="160" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b_x4JcduV1fH7PbY0Jc2-8" value="virtual ~IGraphic() = default;&#xa;        virtual void assetsLoad(std::vector&lt;std::tuple&lt;char, char, std::string&gt;&gt;) = 0;&#xa;        virtual void windowRefresh() = 0;&#xa;        virtual void windowClear() = 0;&#xa;        virtual void windowClose() = 0;&#xa;        virtual bool isRunning() = 0;&#xa;        virtual int getKey() = 0;&#xa;        virtual int getSize() = 0;&#xa;        virtual void printText(std::string, pos_t) = 0;&#xa;        virtual void printMap(std::vector&lt;std::string&gt;, pos_t) = 0;&#xa;        virtual void printElements(std::vector&lt;std::pair&lt;char, pos_t&gt;&gt;, pos_t) = 0;&#xa;        virtual int findTuple(char) = 0;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="b_x4JcduV1fH7PbY0Jc2-7">
+          <mxGeometry y="26" width="470" height="184" as="geometry" />
+        </mxCell>
+        <mxCell id="b_x4JcduV1fH7PbY0Jc2-9" value="libcaca" style="swimlane;fontStyle=2;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="470" y="660" width="290" height="120" as="geometry">
+            <mxRectangle x="230" y="140" width="160" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b_x4JcduV1fH7PbY0Jc2-10" value="caca_canvas_t *_canvas;&#xa;        caca_display_t *_display;&#xa;        caca_event_t _event;&#xa;        bool _open;&#xa;        std::vector&lt;std::pair&lt;char, char&gt;&gt; _assets;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="b_x4JcduV1fH7PbY0Jc2-9">
+          <mxGeometry y="26" width="290" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="b_x4JcduV1fH7PbY0Jc2-11" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.313;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.421;entryY=1.032;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="b_x4JcduV1fH7PbY0Jc2-7" target="b_x4JcduV1fH7PbY0Jc2-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="700" as="sourcePoint" />
+            <mxPoint x="440" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b_x4JcduV1fH7PbY0Jc2-12" value="Core" style="swimlane;fontStyle=2;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="30" y="440" width="170" height="350" as="geometry">
+            <mxRectangle x="230" y="140" width="160" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b_x4JcduV1fH7PbY0Jc2-17" value="Core();&#xa;        ~Core();&#xa;        void loadGraphic(std::string);&#xa;        void loadGame(std::string);&#xa;        void closeGraphic();&#xa;        void closeGame();&#xa;        void switchGraphic(std::string);&#xa;        void switchGame(std::string);&#xa;        void searchLibs();&#xa;        void saveLib(std::filesystem::path);&#xa;        void loadScore();&#xa;        void displayMan();&#xa;        void displayMenu();&#xa;        void displayGame();&#xa;        void displayOver();&#xa;        void keyMan(int);&#xa;        void keyLib(int);&#xa;        void keyMenu(int);&#xa;        void keyGame(int);&#xa;        void keyOver(int);&#xa;        void loop();" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="b_x4JcduV1fH7PbY0Jc2-12">
+          <mxGeometry y="26" width="170" height="324" as="geometry" />
+        </mxCell>
+        <mxCell id="b_x4JcduV1fH7PbY0Jc2-15" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.441;exitY=-0.008;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.164;entryY=1.013;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="b_x4JcduV1fH7PbY0Jc2-12" target="b_x4JcduV1fH7PbY0Jc2-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="10.000000000000114" y="386.99" as="sourcePoint" />
+            <mxPoint x="214.9799999999999" y="329.99800000000005" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b_x4JcduV1fH7PbY0Jc2-18" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.612;exitY=0.997;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="b_x4JcduV1fH7PbY0Jc2-17" target="b_x4JcduV1fH7PbY0Jc2-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="114.97000000000003" y="447.20000000000005" as="sourcePoint" />
+            <mxPoint x="129.03999999999996" y="292.91200000000003" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
